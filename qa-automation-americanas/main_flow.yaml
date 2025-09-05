@@ -1,0 +1,25 @@
+# Main - Flows: Login → Busca → Adicionar ao Carrinho
+# Autor: Eduardo
+# Data: 04/09/2025
+
+appId: com.b2w.americanas
+---
+# Início da jornada completa
+- clearState
+- launchApp
+
+# 1. Fluxo de Login (executa apenas uma vez)
+- runFlow: ./flows/login_flow.yaml
+
+# 2. Fluxo de Busca do Produto (continua logado)
+- runFlow: ./flows/search_product_flow.yaml
+
+# 3. Fluxo de Adição ao Carrinho (continua logado)
+- runFlow: ./flows/add_to_cart_flow.yaml
+
+# Validação final da jornada completa
+- assertVisible: "Pedido aguardando\npagamento"
+- evalScript: |
+    console.log("Flows executados com sucesso!");
+    console.log("Produto adicionado ao carrinho");
+    console.log("QR Code Pix gerado com sucesso");

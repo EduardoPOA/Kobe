@@ -1,0 +1,18 @@
+# Feature: Busca de Produto
+appId: com.b2w.americanas
+---
+
+# Buscar o produto
+- waitForAnimationToEnd:
+    timeout: 5000
+- tapOn:
+    id: "Voltar"
+- tapOn: "busque aqui seu produto"
+- inputText: "Chocolate Galak"
+- pressKey: Enter
+
+- waitForAnimationToEnd:
+    timeout: 3000
+
+# Validação do resultado da pesquisa
+- assertVisible: "comprar"

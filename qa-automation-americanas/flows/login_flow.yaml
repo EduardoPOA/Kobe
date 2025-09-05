@@ -1,0 +1,34 @@
+# Feature: Fluxo de Login
+appId: com.b2w.americanas
+---
+
+# Valida a home
+- waitForAnimationToEnd:
+    timeout: 15000
+- assertVisible:
+    id: "home"
+
+# Navegar para login
+- tapOn:
+    id: "account"
+- assertVisible:
+    id: "Entrar com e-mail"
+
+# Inserir credenciais e logar
+- tapOn:
+    id: "Entrar com e-mail"
+- tapOn:
+    id: "Entrar com e-mail e senha"
+- tapOn:
+    id: "E-mail"
+- inputText: "colocar__email"
+- tapOn:
+    id: "Senha"
+- inputText: "colocar__senha"
+- tapOn:
+    id: "Entrar"
+
+# Validar login com sucesso
+- waitForAnimationToEnd:
+    timeout: 10000
+- assertVisible: "desconto progressivo"

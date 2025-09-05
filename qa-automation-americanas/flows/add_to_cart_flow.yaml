@@ -1,0 +1,56 @@
+# Feature: Adicionar ao Carrinho
+appId: com.b2w.americanas
+---
+
+# Selecionar a compra do produto da prateleira
+- tapOn: "comprar"
+
+# Inserção de quantidade
+- tapOn: "1"
+- inputText: "0"
+
+# Clicar no botão adicionar ao carrinho
+- tapOn:
+    point: 50%,87%
+
+# Validar produto adicionado
+- waitForAnimationToEnd:
+    timeout: 10000
+- assertVisible:
+    id: "Card Produto"
+
+# Selecionar tipo frete (Retirar em loja) e fechar o pedido
+- tapOn:
+    id: "Fechar pedido"
+- tapOn:
+    id: "E-mail"
+- inputText: "colocar_email"
+- tapOn:
+    id: "Continuar"
+- tapOn:
+    id: "Continuar com a compra"
+- tapOn: "CONTINUAR"
+- waitForAnimationToEnd:
+    timeout: 10000
+- tapOn:
+    id: "Seleção de frete"
+- tapOn:
+    id: "Fechar pedido"
+    
+# Selecionar pagamento
+- tapOn:
+    id: "Fechar pedido"
+- waitForAnimationToEnd:
+    timeout: 10000
+    
+# Pagamento tipo pix
+- tapOn: "Pix"
+- waitForAnimationToEnd:
+    timeout: 10000
+- tapOn:
+    id: "Fechar pedido"
+    
+# Validar o QRCode pix gerado
+- waitForAnimationToEnd:
+    timeout: 20000
+- assertVisible: "Pedido aguardando\npagamento"
