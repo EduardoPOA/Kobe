@@ -28,12 +28,12 @@ Automação de testes end-to-end para o aplicativo Americanas (com.b2w.americana
 
 # Estrutura do Projeto
    qa-automation-americanas/
-  |-- main_flow.yaml              # Fluxo principal
-  |-- flows/
-        |-- login_flow.yaml         # Fluxo de login válido
-        |-- login_fail_flow.yaml    # Fluxo de login inválido
-        |-- search_product_flow.yaml # Fluxo de busca
-        |-- add_to_cart_flow.yaml   # Fluxo de compra
+    |main_flow.yaml              # Fluxo principal
+    |flows/
+        |login_flow.yaml         # Fluxo de login válido
+        |login_fail_flow.yaml    # Fluxo de login inválido
+        |search_product_flow.yaml # Fluxo de busca
+        |add_to_cart_flow.yaml   # Fluxo de compra
 
 # Como Executar
   - Pré-requisitos
