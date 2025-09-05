@@ -27,13 +27,14 @@ Automação de testes end-to-end para o aplicativo Americanas (com.b2w.americana
   * Login	Credenciais inválidas	Email: invalido@teste.com, Senha: senhaerrada	Mensagem de erro
 
 # Estrutura do Projeto
-   qa-automation-americanas/
-  |-- main_flow.yaml              # Fluxo principal
-  |-- flows/
-        |-- login_flow.yaml         # Fluxo de login válido
-        |-- login_fail_flow.yaml    # Fluxo de login inválido
-        |-- search_product_flow.yaml # Fluxo de busca
-        |-- add_to_cart_flow.yaml   # Fluxo de compra
+  qa-automation-americanas/
+   ├── main_flow.yaml              # Fluxo principal
+   ├── test-results.xml            # Relatório de testes (gerado)
+   └── flows/
+       ├── login_flow.yaml         # Fluxo de login válido
+       ├── login_fail_flow.yaml    # Fluxo de login inválido
+       ├── search_product_flow.yaml # Fluxo de busca
+       └── add_to_cart_flow.yaml   # Fluxo de compra
 
 # Como Executar
   - Pré-requisitos
